@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新球体育 · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9fafb;
+      color: #2c3e4f;
+      font-family: -apple-system, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 2.5rem 1.25rem;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* 目录感布局 — 用纵向节奏和卡片区分区域 */
+    .hero {
+      margin-bottom: 2.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-bottom: 0.5rem;
+      color: #1e2b37;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #5b6e7e;
+      max-width: 600px;
+    }
+
+    .section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #3b4d5c;
+      border-left: 3px solid #b6c6d4;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .card h3 {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: #1f2c36;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4a5e6e;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #eef2f6;
+      color: #2c4a5f;
+      font-size: 0.8rem;
+      padding: 0.15rem 0.65rem;
+      border-radius: 20px;
+      margin-top: 0.5rem;
+    }
+
+    .info-block {
+      background: #f1f4f7;
+      border-radius: 12px;
+      padding: 1.5rem 1.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-block p {
+      font-size: 0.95rem;
+    }
+
+    .info-block strong {
+      color: #1a2b36;
+    }
+
+    .hint-box {
+      background: #ffffff;
+      border: 1px solid #e2e8ec;
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .hint-box .hint-title {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+      color: #2f4656;
+    }
+
+    .hint-box p {
+      font-size: 0.92rem;
+      color: #475e70;
+    }
+
+    .faq-summary {
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid #e8edf2;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      font-size: 0.98rem;
+      color: #1f303d;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      font-size: 0.92rem;
+      color: #4b6173;
+    }
+
+    .inline-link {
+      color: #2b6b8a;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd8e2;
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 450;
+    }
+
+    .inline-link:hover {
+      color: #11475f;
+      border-bottom-color: #11475f;
+    }
+
+    .footnote {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #dce3ea;
+      font-size: 0.85rem;
+      color: #6b7f8f;
+      text-align: left;
+    }
+
+    .footnote a {
+      color: #4a6a7e;
+      text-decoration: none;
+      border-bottom: 1px solid #c8d4df;
+    }
+
+    .footnote a:hover {
+      color: #1d3e50;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 0.9rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .card {
+        padding: 1rem 1.1rem;
+      }
+      .info-block,
+      .hint-box {
+        padding: 1.1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 区：直接点明站点用途 -->
+    <div class="hero">
+      <h1>新球体育 · 知识库</h1>
+      <p>聚合体育信息、赛事资料与运动知识，帮助你快速识别和了解这个平台的定位与内容范围。</p>
+    </div>
+
+    <!-- 说明区：站点是什么、提供什么 -->
+    <div class="section">
+      <div class="section-title">说明</div>
+      <div class="info-block">
+        <p><strong>新球体育</strong> 是一个以体育内容为核心的资讯与数据平台。无论你想了解某项运动的规则、近期赛事进程，还是希望查阅相关运动知识，这里都可以作为起点。平台的内容偏向信息整合，而非即时新闻流，适合需要查阅和参考的用户。</p>
+        <p style="margin-top: 0.6rem;">站点目前主要提供：运动项目简介、赛事档案、常见术语说明以及部分数据索引。整体风格偏向知识库式整理，而非直播或社交讨论。</p>
+      </div>
+    </div>
+
+    <!-- 目录感布局：卡片式特点区域，展示不同板块 -->
+    <div class="section">
+      <div class="section-title">特点</div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>运动项目速览</h3>
+          <p>覆盖足球、篮球、网球、田径等主流项目的基础规则、场地规格和关键术语。适合入门者或需要快速查询的人。</p>
+          <span class="tag">规则</span> <span class="tag">术语</span>
+        </div>
+        <div class="card">
+          <h3>赛事档案</h3>
+          <p>整理历年重要赛事的时间线、冠军记录和赛制变化，不包含实时比分，侧重历史与结构。</p>
+          <span class="tag">年鉴</span> <span class="tag">记录</span>
+        </div>
+        <div class="card">
+          <h3>知识卡片</h3>
+          <p>以短条目形式呈现运动生理、训练基础、装备常识等内容，每篇独立可读，方便碎片化参考。</p>
+          <span class="tag">训练</span> <span class="tag">常识</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 提示区：帮助用户快速定位 -->
+    <div class="hint-box">
+      <div class="hint-title">使用提示</div>
+      <p>如果你带着明确的问题（比如“网球大满贯有哪些”、“足球越位规则是什么”），可以直接在站内搜索或按分类浏览。如果是漫无目的地探索，建议从“运动项目速览”开始，再根据兴趣深入。内容页面通常结构清晰，标题层级分明，适合扫读。</p>
+    </div>
+
+    <!-- 相关信息区：FAQ摘要 + 一个自然嵌入的链接 -->
+    <div class="section">
+      <div class="section-title">相关信息</div>
+      <div class="faq-summary">
+        <div class="faq-item">
+          <div class="faq-q">新球体育的内容更新频率如何？</div>
+          <div class="faq-a">以阶段性整理为主，没有每日快讯。知识类内容会随着赛季或规则变动而补充，赛事档案则按年度更新。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">是否需要注册或付费？</div>
+          <div class="faq-a">目前大部分内容可以直接浏览，部分深度资料可能需要简单注册。具体可以到 <a href="https://portal-xinqiusport.com" class="inline-link">新球体育</a> 页面查看说明。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">适合哪些人群？</div>
+          <div class="faq-a">运动爱好者、体育入门学习者、需要查阅运动常识的写作者或教练。不追求时效性，更看重准确和条理。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 脚注，再出现一次链接（也满足a标签要求） -->
+    <div class="footnote">
+      本页是对 <a href="https://portal-xinqiusport.com" class="inline-link">新球体育</a> 的介绍与知识库入口说明。内容基于公开信息整理，具体功能以网站实际呈现为准。
+    </div>
+  </div>
+</body>
+</html>
